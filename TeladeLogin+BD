@@ -11,9 +11,9 @@ using System.Data.SqlClient;
 
 namespace ControlSystem
 {
-    public partial class Form1 : Form
+    public partial class TelaLogin : Form
     {
-        public Form1()
+        public TelaLogin()
         {
             InitializeComponent();
             txtSenha.PasswordChar = '*';
@@ -32,7 +32,7 @@ namespace ControlSystem
         private void btnLogin_Click(object sender, EventArgs e)
         {
             SqlConnection dataConnection = new SqlConnection();
-            dataConnection.ConnectionString = "Integrated Security = true; Initial Catalog = *NOMEDOBANCO*; Data Source = URL";
+            dataConnection.ConnectionString = "Integrated Security = true; Initial Catalog = PimBetaDB; Data Source = MONSTRINHO2\\SQLSERVER2022";
             dataConnection.Open();
 
             SqlCommand dataCommand = new SqlCommand();
