@@ -1,0 +1,61 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace ControlSystem
+{
+    public partial class SelecioneColaboradorHolerite : Form
+    {
+        public SelecioneColaboradorHolerite()
+        {
+            InitializeComponent();
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            GeracaoHolerite form = new GeracaoHolerite();
+            form.Show();
+        }
+    }
+}
+
+
+//Selecionando o colaborador para gerar o holerite
+
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace ControlSystem
+{
+    public partial class GeracaoHolerite : Form
+    {
+        public GeracaoHolerite()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //aqui seria a geração do pdf a qual ainda não sei fazer
+        }
+    }
+}
