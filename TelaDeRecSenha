@@ -1,0 +1,110 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace ControlSystem
+{
+    public partial class RecuperacaoSenha : Form
+    {
+        public RecuperacaoSenha()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Recuperacao2 form = new Recuperacao2();
+            form.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Recuperacao2 form = new Recuperacao2();
+            form.Show();
+        }
+    }
+}
+
+
+//Código acima feito para o forms onde irá solicitar o acesso para recuperar a senha (OBS: Não tá enviando nada para nenhum lugar)
+
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace ControlSystem
+{
+    public partial class Recuperacao2 : Form
+    {
+        public Recuperacao2()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+             NovaSenha form = new NovaSenha();
+             form.Show();
+        }
+    }
+}
+
+
+//Código para verificar o numero enviado pra email/telefone e assim recuperar a senha (OBS: Falta o IF de verificação do código enviado/inserido)
+
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace ControlSystem
+{
+    public partial class NovaSenha : Form
+    {
+        public NovaSenha()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Senha alterada com sucesso!", "Validação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            TelaLogin form = new TelaLogin();
+            form.Show();
+        }
+
+        private void txtUsuario_TextChanged(object sender, EventArgs e)
+        {
+            txtUsuario.PasswordChar = '*';
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            txtUsuario.PasswordChar = '*';
+        }
+    }
+}
+
+
+
+
+//Código para atualizar a senha e trocar ela no Banco de Dados (Incompleto pois falta o código para trocar ela diretamente no banco)
