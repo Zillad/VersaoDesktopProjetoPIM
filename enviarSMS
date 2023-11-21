@@ -1,0 +1,39 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Net.Mail;
+using System.Net;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using Comtele.Sdk.Services;
+
+namespace ComteleSdk
+{
+    internal class Program
+    {
+        private static string API_KEY = "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX";
+        
+        private static void Main(string[] args)
+        {
+            var textMessageService = new TextMessageService(API_KEY);
+            var result = textMessageService.Send(
+             "my_id",                        // Sender: Id de requisicao da sua aplicacao para ser retornado no relatorio, pode ser passado em branco.
+             "Seu código é 456258",                 // Content: Conteudo da mensagem a ser enviada.
+             new string[] { "11956941486" }  // Receivers: Numero de telefone que vai ser enviado o SMS.
+            );
+
+            if (result.Success)
+            {
+                Console.WriteLine("A mensagem foi enviada com sucesso.");
+            }
+            else
+            {
+                Console.WriteLine("A mensagem não pode ser enviada. Detalhes: " + result.Message);
+            }
+        }
+    }
+}
